@@ -30,6 +30,12 @@ option(BLUETOOTH
 find_package(Threads REQUIRED)
 
 
+if (VJ_TEST_FLAG)
+    target_compile_definitions(${TARGET} PUBLIC __CORE_VJ_TEST_FLAG__)
+    message(STATUS "VJ Test flag enabled")
+endif()
+
+
 add_library(${TARGET} SHARED
 	DoorBell.cpp
         CyclicBuffer.cpp

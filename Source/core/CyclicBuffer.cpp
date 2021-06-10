@@ -39,6 +39,10 @@ namespace Core {
         _event = CreateEvent(nullptr, FALSE, FALSE, (strippedName + ".event").c_str());
 #endif
 
+#ifdef __CORE_VJ_TEST_FLAG__
+        compile error
+#endif
+
         if (_buffer.IsValid() == true) {
             _administration = reinterpret_cast<struct control*>(_buffer.Buffer());
             _realBuffer = (&(_buffer.Buffer()[sizeof(struct control)]));
